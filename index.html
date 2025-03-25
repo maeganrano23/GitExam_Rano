@@ -3,9 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Table Row Color Change on Click</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr.clicked {
+            background-color: #dbd813; /* Color changes when clicked */
+        }
+    </style>
 </head>
 <body>
-    
+<p>
+    Maegan Rano
+</p>
+<h2>Student Information</h2>
+<table id="myTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Juan Dela Cruz</td>
+            <td>20</td>
+            <td>Computer Engineering</td>
+        </tr>
+        <tr>
+            <td>Maria Santos</td>
+            <td>19</td>
+            <td>Information Technology</td>
+        </tr>
+        <tr>
+            <td>Carlos Reyes</td>
+            <td>21</td>
+            <td>Software Engineering</td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    // Get all the table rows
+    const rows = document.querySelectorAll('#myTable tbody tr');
+
+    // Add click event listener to each row
+    rows.forEach(row => {
+        row.addEventListener('click', function() {
+            // Toggle the 'clicked' class to change the color
+            row.classList.toggle('clicked');
+        });
+    });
+</script>
+
 </body>
 </html>
